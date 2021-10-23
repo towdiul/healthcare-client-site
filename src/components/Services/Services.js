@@ -4,8 +4,8 @@ import { ButtonGroup, Card, Col, Row } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 
 
-const Courses = (props) => {
-    const {id, name, img, price} = props.courses;
+const Services = (props) => {
+    const {id, name, img, price, Description} = props.services;
     return (
         
         <div className="col mb-2 ">
@@ -14,7 +14,7 @@ const Courses = (props) => {
                 <div className="card-body">
                     <h3 className="card-title bg-secondary p-2 rounded">{name}</h3>
                     <h5><span>Price</span>:$ {price}</h5>
-                    <p className="card-text text-start"><span>We</span>strive to eliminate health disparities for everyone, facing any type of cancer, from every race and socio-economic background.  We stand ready to help and want to assure the community that we have zero tolerance for racial injustice. Our mission is to “Enhance Health, Life and Survivorship” and we will work to fulfill our mission while encouraging compassion and understanding in all of our pursuits.</p>
+                    <p className="card-text text-start">{Description.substring(0, 50)}</p>
                     <Link to={`/detalis/${id}`}>
                     <button className="btn btn-danger px-4" >Details</button>
                     </Link>
@@ -25,4 +25,4 @@ const Courses = (props) => {
     );
 };
 
-export default Courses;
+export default Services;

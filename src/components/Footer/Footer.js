@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-5">
               <div className="left-container text-start">
-                <h1><span>Health</span> Care Club</h1>
+                <h1><span>Health</span> Care </h1>
                
                 <p className="mt-4 ">
                     <small>

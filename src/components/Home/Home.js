@@ -1,27 +1,27 @@
 import React,{useEffect, useState} from 'react';
 import { Carousel } from 'react-bootstrap';
-import Courses from "../Courses/Courses"
+import Services from "../Services/Services"
 
 const Home = () => {
-    const [course, setCourse] = useState([]);
+    const [service, setService] = useState([]);
     useEffect(()=>{
         fetch('./services.json')
         .then(res=> res.json())
-        .then(data => setCourse(data));
+        .then(data => setService(data));
     }, [])
-    const sliced = course.slice(0,4);
+    const sliced = service.slice(0,6);
     console.log(sliced)
     return (
         <div>
-        <Carousel>
+        <Carousel className="mt-0 pt-0  h-75">
   <Carousel.Item interval={1000}>
     <img
       className="d-block  w-100"
-      src="https://image.freepik.com/free-photo/closeup-shot-boy-getting-checkup-by-doctor_181624-34747.jpg"
+      src="https://tandemallied.com/fileadmin/_processed_/9/8/csm_Commerz2-2_3aed32a352.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
-    <h3>Health Care Club</h3> 
+    <h3>Health Care </h3> 
  
     </Carousel.Caption>
   </Carousel.Item>
@@ -32,7 +32,7 @@ const Home = () => {
       alt="Second slide"
     />
     <Carousel.Caption>
-    <h3>Health Care Club</h3> 
+    <h3>Health Care </h3> 
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
@@ -42,18 +42,18 @@ const Home = () => {
       alt="Third slide"
     />
     <Carousel.Caption>
-    <h3>Health Care Club</h3> 
+    <h3>Health Care </h3> 
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
         <h2 className="p-5 pb-2"><span>Our Best</span> Service</h2><hr className="w-50 shadow mx-auto"/>
-        <div class="row row-cols-1 row-cols-md-2 g-4 mb-4 mt-2">
+        <div class="row row-cols-1 row-cols-md-6 g-4 mb-4 mt-2 w-100">
             
                 {
-                    sliced.map(courses => <Courses courses={courses}>
+                    sliced.map(services => <Services services={services}>
                         
                         
-                    </Courses>)
+                    </Services>)
                 }
             
         </div>
